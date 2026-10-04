@@ -1,11 +1,36 @@
-<div align="center">
+# Family Hub — a simulated Alexa+ voice assistant for households, with three modes: Productivity, Home & Lifestyle, and Education.
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+## WHAT IT DOES
+The Family Hub allows users to switch between three modes: Productivity, Home & Lifestyle, and Education. It supports both voice and text interactions, with conversational memory maintained within each mode's session.
 
-  <h1>Built with AI Studio</h2>
+## TECH STACK
+*   React
+*   TypeScript
+*   Tailwind CSS
+*   Framer Motion
+*   Vite
+*   Groq API (openai/gpt-oss-120b)
+*   Browser Web Speech API (SpeechRecognition + SpeechSynthesis)
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## SETUP INSTRUCTIONS
+1.  Clone the repository.
+2.  Run `npm install`.
+3.  Copy `.env.example` to `.env.local`.
+4.  Get a free Groq API key at https://console.groq.com/keys
+5.  Add the key to `.env.local` as `VITE_GROQ_API_KEY=your_key_here`
+6.  Run `npm run dev`.
+7.  Open the local URL shown in the terminal.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## HOW TO USE IT
+Switch between the three modes using the tabs at the top, type or use the microphone icon to interact, responses can be heard aloud via the speaker toggle.
 
-</div>
+## VOICE FEATURE NOTES
+Voice input/output uses the browser's native Web Speech API, works best in Chrome-based browsers, and gracefully falls back to text-only if unsupported.
+
+## NOTE ON DEMO VIDEO
+A full working demonstration is available in the submission's demo video. This repository is provided for code review and so reviewers can run the project independently if desired.
+
+## PROJECT STRUCTURE
+*   `src/services/assistant.ts`: Handles all Groq API calls, organized by mode.
+*   `src/components/`: React components.
+*   `src/types/`: TypeScript type definitions.
